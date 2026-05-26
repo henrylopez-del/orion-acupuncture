@@ -204,7 +204,7 @@ nav.top .links a.muted { color: var(--muted); }
 .collage-tile { position: absolute; border-radius: 4px; }
 .collage .photo-1 {
   width: 280px; height: 360px; top: 0; right: 60px;
-  background-image: url('img/hero-needles.jpg');
+  background-image: url('img/hero-needles.webp');
   background-size: cover; background-position: center;
   transform: rotate(-2deg);
   box-shadow: 0 30px 60px -20px rgba(31,26,20,0.35);
@@ -212,7 +212,7 @@ nav.top .links a.muted { color: var(--muted); }
 }
 .collage .photo-2 {
   width: 200px; height: 260px; bottom: 30px; left: 20px;
-  background-image: url('img/hero-hands.jpg');
+  background-image: url('img/hero-hands.webp');
   background-size: cover; background-position: center;
   transform: rotate(3deg);
   box-shadow: 0 20px 40px -15px rgba(31,26,20,0.25);
@@ -306,9 +306,9 @@ nav.top .links a.muted { color: var(--muted); }
   box-shadow: 0 30px 60px -20px rgba(31,26,20,0.35);
   z-index: 1;
 }
-.page-hero-photo.hands { background-image: url('img/hero-hands.jpg'); filter: sepia(0.18) contrast(1.05); }
-.page-hero-photo.needles { background-image: url('img/hero-needles.jpg'); }
-.page-hero-photo.gua-sha { background-image: url('img/gua-sha.jpg'); }
+.page-hero-photo.hands { background-image: url('img/hero-hands.webp'); filter: sepia(0.18) contrast(1.05); }
+.page-hero-photo.needles { background-image: url('img/hero-needles.webp'); }
+.page-hero-photo.gua-sha { background-image: url('img/gua-sha.webp'); }
 .page-hero-photo.small { width: 180px; height: 230px; }
 .page-hero-stamp {
   position: absolute;
@@ -341,19 +341,19 @@ nav.top .links a.muted { color: var(--muted); }
   position: relative;
 }
 .photo-inset.flip .img { transform: rotate(2deg); }
-.photo-inset .img.hands { background-image: url('img/hero-hands.jpg'); filter: sepia(0.18) contrast(1.05); }
-.photo-inset .img.needles { background-image: url('img/hero-needles.jpg'); }
-.photo-inset .img.gua-sha { background-image: url('img/gua-sha.jpg'); }
-.photo-inset .img.thorns { background-image: url('img/thorns.jpg'); }
+.photo-inset .img.hands { background-image: url('img/hero-hands.webp'); filter: sepia(0.18) contrast(1.05); }
+.photo-inset .img.needles { background-image: url('img/hero-needles.webp'); }
+.photo-inset .img.gua-sha { background-image: url('img/gua-sha.webp'); }
+.photo-inset .img.thorns { background-image: url('img/thorns.webp'); }
 .photo-inset .img.tea-stamps {
-  background-image: url('img/tea-stamps.jpg');
+  background-image: url('img/tea-stamps.webp');
   background-size: contain;
   background-repeat: no-repeat;
   background-color: var(--paper-deep);
   background-position: center;
 }
-.photo-inset .img.treatment-room { background-image: url('img/treatment-room.jpg'); }
-.photo-inset .img.olive-branch { background-image: url('img/olive-branch.jpg'); }
+.photo-inset .img.treatment-room { background-image: url('img/treatment-room.webp'); }
+.photo-inset .img.olive-branch { background-image: url('img/olive-branch.webp'); }
 .photo-inset .caption-block {
   padding: 20px 0;
 }
@@ -398,9 +398,9 @@ nav.top .links a.muted { color: var(--muted); }
   mix-blend-mode: multiply;
   opacity: 0.85;
 }
-.deco-img.pressed-flowers { background-image: url('img/pressed-flowers.jpg'); }
-.deco-img.thorns { background-image: url('img/thorns.jpg'); }
-.deco-img.olive-branch { background-image: url('img/olive-branch.jpg'); }
+.deco-img.pressed-flowers { background-image: url('img/pressed-flowers.webp'); }
+.deco-img.thorns { background-image: url('img/thorns.webp'); }
+.deco-img.olive-branch { background-image: url('img/olive-branch.webp'); }
 @media (max-width: 980px) {
   .deco, .deco-img { display: none; }
 }
@@ -1228,61 +1228,82 @@ footer .wrap { color: var(--paper-deep); }
 
 /* ============ MOBILE: REELS-STYLE SNAP SCROLL ============ */
 @media (max-width: 768px) {
-  html {
+  /* Body becomes the snap container (Aurion pattern). Native iOS momentum + snap. */
+  html { height: 100%; overflow: hidden; }
+  body {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
     scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    scroll-behavior: smooth;
+    /* Strip heavy paper texture on mobile: single noise, no fixed attachment */
+    background-image:
+      radial-gradient(ellipse 700px 600px at 15% 15%, rgba(181,128,64,0.10), transparent 65%),
+      radial-gradient(ellipse 600px 500px at 90% 85%, rgba(168,123,67,0.08), transparent 60%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nm'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0.6 0 0 0 0 0.48 0 0 0 0 0.3 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nm)'/%3E%3C/svg%3E");
+    background-attachment: scroll, scroll, scroll;
+    background-size: 100% 100%, 100% 100%, 300px 300px;
+    background-repeat: no-repeat, no-repeat, repeat;
   }
-  html, body { overflow-x: hidden; }
+  /* Strip backdrop-filter blur (expensive on iOS) */
+  nav.top {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(242,235,220,0.96);
+  }
 
-  /* Every major editorial moment becomes a 100vh "reel" */
+  /* Every major editorial moment is a full-screen reel */
   .hero,
   .page-hero,
-  .teasers,
-  .practitioner,
-  .testimonials,
-  .book,
-  .book-teaser,
-  .book-form-wrap,
-  .pricing,
-  .prac-extended,
-  .first .first-intro,
-  .notes,
-  footer {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: 100vh;
-    min-height: 100dvh;
-    scroll-margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 90px;
-    padding-bottom: 50px;
-  }
-  /* Tall sections allowed to overflow inside their snap point */
-  .hero, .page-hero, .practitioner, .prac-extended, .notes { padding-top: 80px; padding-bottom: 60px; }
-
-  /* Individual cards inside grids become their own snap points */
   .teaser,
   .service-card,
   .element,
   .element-detail,
   .test-card,
   .step-card,
-  .photo-inset {
+  .photo-inset,
+  .practitioner,
+  .prac-extended,
+  .pricing,
+  .notes,
+  .first .first-intro,
+  .book,
+  .book-teaser,
+  .book-form-wrap,
+  footer {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    min-height: 100vh;
-    min-height: 100dvh;
+    height: 100vh;
+    height: 100dvh;
     display: flex !important;
     flex-direction: column;
-    justify-content: center;
-    padding: 90px 24px 50px !important;
+    justify-content: flex-start;
+    padding: 80px 24px 30px !important;
     border: none !important;
     background: transparent !important;
     margin: 0 !important;
+    overflow: hidden;
   }
+  /* Reels with short content: vertical-center inside reel */
+  .teaser, .service-card, .test-card, .step-card, .element, .book, .book-teaser, .first-intro {
+    justify-content: center;
+  }
+  /* Pages with tall content: clear nav at top */
+  .hero { padding-top: 64px !important; padding-bottom: 12px !important; }
+  .page-hero { padding-top: 96px !important; }
+  .photo-inset { padding-top: 80px !important; padding-bottom: 40px !important; gap: 20px !important; }
+  footer { padding-bottom: 30px !important; overflow: visible; }
+
+  /* Reel fade-in when slide enters viewport */
+  .hero > *, .page-hero > *, .teaser, .service-card, .element, .element-detail,
+  .test-card, .step-card, .photo-inset, .practitioner > *, .prac-extended > *,
+  .pricing, .notes, .first-intro, .book > *, .book-teaser > *, .book-form-wrap > * {
+    transition: opacity .55s ease, transform .55s ease;
+  }
+  .reel-active { /* hook for animations */ }
 
   /* Reset grid containers so children flow vertically as snap points */
   .teaser-grid, .service-grid, .elements, .test-grid, .steps {
