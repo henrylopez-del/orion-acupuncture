@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@acuwithgigi — Acupuncture in Dublin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F2EBDC;
+  --paper-deep: #E8DFCC;
+  --ink: #1F1A14;
+  --text: #4A3F33;
+  --muted: #8A7E6E;
+  --wood: #3F5C3A;
+  --wood-soft: #7C8A6E;
+  --fire: #A03C2A;
+  --fire-soft: #C9745E;
+  --earth: #B58040;
+  --earth-soft: #D4A872;
+  --metal: #D9CDB6;
+  --metal-deep: #A89A82;
+  --water: #2A4A6E;
+  --water-soft: #6B85A4;
+  --line: #2F261C;
+  --serif: 'Fraunces', 'Georgia', serif;
+  --sans: 'Inter Tight', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  font-weight: 400;
+  color: var(--text);
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.93 0 0 0 0 0.86 0 0 0 0 0.73 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  line-height: 1.55;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  color: var(--ink);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.italic-serif {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 80;
+  font-weight: 400;
+}
+
+p { color: var(--text); }
+
+a { color: inherit; text-decoration: none; }
+
+/* Container */
+.wrap {
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ============ NAV ============ */
+nav.top {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 22px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(242,235,220,0.92), rgba(242,235,220,0));
+  backdrop-filter: blur(6px);
+}
+
+.brand {
+  font-family: var(--serif);
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-mark {
+  width: 22px; height: 22px;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+}
+
+nav.top .links {
+  display: flex;
+  gap: 36px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+nav.top .links a:hover { color: var(--wood); }
+
+.btn-book {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 11px 22px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+.btn-book:hover { background: var(--ink); color: var(--paper); }
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  padding: 180px 0 120px;
+  overflow: hidden;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 36px; height: 1px;
+  background: var(--muted);
+}
+
+.hero h1 {
+  font-size: clamp(58px, 8.5vw, 134px);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  margin-bottom: 38px;
+}
+.hero h1 .line2 {
+  display: block;
+  margin-top: 8px;
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+  color: var(--wood);
+}
+
+.hero-sub {
+  font-size: 19px;
+  line-height: 1.5;
+  max-width: 510px;
+  margin-bottom: 44px;
+  color: var(--text);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.btn-primary {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 16px 34px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-primary:hover { background: var(--wood); transform: translateX(2px); }
+.btn-ghost {
+  color: var(--ink);
+  padding: 16px 8px;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--ink);
+  transition: opacity 0.2s ease;
+}
+.btn-ghost:hover { opacity: 0.6; }
+
+/* Hero collage */
+.collage {
+  position: relative;
+  height: 600px;
+  width: 100%;
+}
+.collage-tile {
+  position: absolute;
+  border-radius: 4px;
+}
+.collage .photo-1 {
+  width: 280px; height: 360px;
+  top: 0; right: 60px;
+  background-image: url('img/hero-needles.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: rotate(-2deg);
+  box-shadow: 0 30px 60px -20px rgba(31,26,20,0.35);
+  overflow: hidden;
+}
+.collage .photo-2 {
+  width: 200px; height: 260px;
+  bottom: 30px; left: 20px;
+  background-image: url('img/hero-hands.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: rotate(3deg);
+  box-shadow: 0 20px 40px -15px rgba(31,26,20,0.25);
+  overflow: hidden;
+  filter: sepia(0.15) contrast(1.05);
+}
+
+.collage .botanic-1 {
+  position: absolute;
+  top: -20px; left: -10px;
+  width: 180px;
+  transform: rotate(-15deg);
+  z-index: 3;
+}
+.collage .botanic-2 {
+  position: absolute;
+  bottom: -10px; right: -20px;
+  width: 220px;
+  transform: rotate(20deg);
+  z-index: 3;
+}
+.collage .stamp {
+  position: absolute;
+  top: 250px; right: 0;
+  width: 110px;
+  height: 110px;
+  z-index: 4;
+  transform: rotate(-8deg);
+}
+
+/* Floating "needle" thin element */
+.collage .needle-1 {
+  position: absolute;
+  top: 130px; left: 140px;
+  width: 4px; height: 90px;
+  background: linear-gradient(to bottom, #C9B98A 0%, #8A7752 80%, #4A3F2A 100%);
+  transform: rotate(35deg);
+  z-index: 5;
+  border-radius: 2px;
+}
+.collage .needle-1::before {
+  content: "";
+  position: absolute;
+  top: -8px; left: -3px;
+  width: 10px; height: 10px;
+  background: #4A3F2A;
+  border-radius: 50%;
+}
+
+/* ============ APPROACH ============ */
+.approach {
+  padding: 140px 0 100px;
+  border-top: 1px solid rgba(31,26,20,0.12);
+  position: relative;
+}
+
+.approach-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.approach-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.approach h2 {
+  font-size: clamp(34px, 4vw, 52px);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  margin-bottom: 28px;
+}
+.approach h2 em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+  color: var(--water);
+}
+
+.approach-lede {
+  font-size: 17px;
+  line-height: 1.65;
+  max-width: 640px;
+  color: var(--text);
+}
+.approach-lede + .approach-lede { margin-top: 18px; }
+
+/* Five elements row */
+.elements {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.element {
+  padding: 28px 0 0;
+  border-top: 1px solid var(--ink);
+  position: relative;
+}
+.element-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--muted);
+  font-variation-settings: "opsz" 14;
+  margin-bottom: 80px;
+}
+.element-svg {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 70px;
+  height: 70px;
+}
+.element-name {
+  font-family: var(--serif);
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.element-name em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+}
+.element-pair {
+  font-family: var(--sans);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.element-body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.element.wood .element-name em { color: var(--wood); }
+.element.fire .element-name em { color: var(--fire); }
+.element.earth .element-name em { color: var(--earth); }
+.element.metal .element-name em { color: var(--metal-deep); }
+.element.water .element-name em { color: var(--water); }
+
+/* ============ SERVICES ============ */
+.services {
+  padding: 140px 0;
+  position: relative;
+}
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 70px;
+  gap: 60px;
+}
+.services-header h2 {
+  font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  max-width: 700px;
+}
+.services-header h2 em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+  color: var(--fire);
+}
+.services-header .meta {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 280px;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.service-card {
+  border-bottom: 1px solid rgba(31,26,20,0.18);
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 130px 1fr auto;
+  gap: 40px;
+  align-items: start;
+  position: relative;
+  transition: padding 0.3s ease;
+}
+.service-card:nth-child(odd) { padding-right: 50px; border-right: 1px solid rgba(31,26,20,0.18); }
+.service-card:nth-child(even) { padding-left: 50px; }
+.service-card:hover { background: rgba(31,26,20,0.025); }
+
+.service-icon {
+  width: 100px;
+  height: 100px;
+}
+.service-info {
+  padding-top: 6px;
+}
+.service-meta {
+  font-family: var(--sans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.service-title {
+  font-family: var(--serif);
+  font-size: 32px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+.service-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 380px;
+}
+.service-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 14;
+  font-size: 14px;
+  color: var(--muted);
+  padding-top: 12px;
+}
+
+.service-card.wood .service-meta { color: var(--wood); }
+.service-card.fire .service-meta { color: var(--fire); }
+.service-card.water .service-meta { color: var(--water); }
+.service-card.earth .service-meta { color: var(--earth); }
+.service-card.metal .service-meta { color: var(--metal-deep); }
+
+/* ============ FIRST SESSION ============ */
+.first {
+  padding: 140px 0 160px;
+  border-top: 1px solid rgba(31,26,20,0.12);
+  position: relative;
+}
+
+.first-intro {
+  max-width: 720px;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+.first-intro .label {
+  font-family: var(--sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.first-intro h2 {
+  font-size: clamp(40px, 5.5vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.first-intro h2 em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  margin-top: 80px;
+  align-items: start;
+}
+.step-card {
+  position: relative;
+}
+.step-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-size: 96px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--wood-soft);
+  margin-bottom: 30px;
+  letter-spacing: -0.05em;
+}
+.step-title {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  letter-spacing: -0.015em;
+}
+.step-text {
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 340px;
+}
+
+/* ============ PRACTITIONER ============ */
+.practitioner {
+  padding: 140px 0;
+  border-top: 1px solid rgba(31,26,20,0.12);
+  background: var(--paper-deep);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.88 0 0 0 0 0.81 0 0 0 0 0.68 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+  position: relative;
+}
+.prac-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 90px;
+  align-items: center;
+}
+.portrait-block {
+  position: relative;
+  height: 580px;
+}
+.portrait {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(160deg, #C9B89A 0%, #8A7560 60%, #4A3F33 100%);
+  background-image:
+    radial-gradient(ellipse at 50% 30%, rgba(232,213,180,0.7), transparent 55%),
+    radial-gradient(ellipse at 40% 70%, rgba(31,26,20,0.3), transparent 60%);
+  border-radius: 2px;
+  transform: rotate(-1.5deg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 40px 70px -25px rgba(31,26,20,0.35);
+}
+.portrait::after {
+  content: "Practitioner portrait · replace with photo";
+  position: absolute;
+  bottom: 16px; left: 18px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(242,235,220,0.65);
+  font-family: var(--sans);
+}
+.portrait-stamp {
+  position: absolute;
+  bottom: -30px; right: -30px;
+  width: 130px; height: 130px;
+  background: var(--fire);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: rotate(8deg);
+  color: var(--paper);
+}
+.portrait-stamp span:first-child {
+  font-family: var(--serif);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+}
+.portrait-stamp span:last-child {
+  font-family: var(--sans);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 4px;
+}
+
+.prac-content .label {
+  font-family: var(--sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.prac-content h2 {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+}
+.prac-content h2 em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+  color: var(--water);
+}
+.prac-content p {
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 22px;
+  max-width: 560px;
+}
+.prac-content p:first-of-type::first-letter {
+  font-family: var(--serif);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 0.85;
+  float: left;
+  margin: 4px 12px -4px 0;
+  color: var(--wood);
+}
+.prac-credentials {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 50px;
+  max-width: 520px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(31,26,20,0.2);
+}
+.cred-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.cred-value {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonials {
+  padding: 140px 0;
+  position: relative;
+}
+.test-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 60px;
+}
+.test-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.test-card {
+  position: relative;
+  padding: 0 30px;
+}
+.test-card:first-child { border-right: 1px solid rgba(31,26,20,0.18); }
+.test-quote {
+  font-family: var(--serif);
+  font-size: 24px;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.test-quote em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+}
+.test-attr {
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+/* ============ BOOK SECTION ============ */
+.book {
+  padding: 140px 0 160px;
+  border-top: 1px solid rgba(31,26,20,0.12);
+  position: relative;
+  text-align: center;
+}
+.book h2 {
+  font-size: clamp(56px, 9vw, 142px);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  margin-bottom: 40px;
+}
+.book h2 em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+  color: var(--wood);
+  display: block;
+}
+.book-details {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0 auto 50px;
+}
+.book .btn-primary {
+  font-size: 17px;
+  padding: 20px 44px;
+}
+
+/* ============ FOOTER ============ */
+footer {
+  background: var(--ink);
+  color: var(--paper-deep);
+  padding: 100px 0 50px;
+}
+footer .wrap { color: var(--paper-deep); }
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 90px;
+}
+.foot-brand {
+  font-family: var(--serif);
+  font-size: 56px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+.foot-brand em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+  color: var(--metal);
+  display: block;
+}
+.foot-col h4 {
+  font-family: var(--sans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--metal-deep);
+  margin-bottom: 22px;
+  font-weight: 500;
+}
+.foot-col p,
+.foot-col a {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--paper-deep);
+  display: block;
+}
+.foot-col a:hover { color: var(--metal); }
+.foot-bottom {
+  border-top: 1px solid rgba(217,205,182,0.18);
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--metal-deep);
+  letter-spacing: 0.05em;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 980px) {
+  .wrap { padding: 0 24px; }
+  nav.top { padding: 18px 24px; }
+  nav.top .links { display: none; }
+  .hero { padding: 130px 0 80px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+  .collage { height: 480px; }
+  .approach-grid { grid-template-columns: 1fr; gap: 40px; }
+  .elements { grid-template-columns: 1fr 1fr; gap: 36px 24px; }
+  .services-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .services-header .meta { text-align: left; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service-card { grid-template-columns: 80px 1fr; padding: 36px 0 !important; border-right: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+  .service-card .service-num { display: none; }
+  .service-icon { width: 60px; height: 60px; }
+  .steps { grid-template-columns: 1fr; gap: 50px; }
+  .prac-grid { grid-template-columns: 1fr; gap: 60px; }
+  .portrait-block { height: 460px; }
+  .test-grid { grid-template-columns: 1fr; gap: 50px; }
+  .test-card:first-child { border-right: none; border-bottom: 1px solid rgba(31,26,20,0.18); padding-bottom: 50px; }
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .foot-brand { font-size: 40px; grid-column: 1 / -1; margin-bottom: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hidden SVG defs -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="2"/>
+      <feDisplacementMap in="SourceGraphic" scale="3"/>
+    </filter>
+    <filter id="paint">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" scale="5"/>
+    </filter>
+  </defs>
+</svg>
+
+<!-- NAV -->
+<nav class="top">
+  <a href="#" class="brand">
+    <svg class="brand-mark" viewBox="0 0 22 22">
+      <circle cx="11" cy="11" r="9" fill="none" stroke="#1F1A14" stroke-width="1.4"/>
+      <circle cx="11" cy="6" r="1.2" fill="#1F1A14"/>
+      <circle cx="16" cy="11" r="1.2" fill="#1F1A14"/>
+      <circle cx="11" cy="16" r="1.2" fill="#1F1A14"/>
+      <circle cx="6" cy="11" r="1.2" fill="#1F1A14"/>
+    </svg>
+    @acuwithgigi
+  </a>
+  <div class="links">
+    <a href="#approach">Approach</a>
+    <a href="#services">Services</a>
+    <a href="#first">First session</a>
+    <a href="#practitioner">Practitioner</a>
+    <a href="#journal">Journal</a>
+  </div>
+  <a href="#book" class="btn-book">Book a session</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Acupuncture · TCM · Dublin since 2019</div>
+        <h1>
+          Old medicine,
+          <span class="line2">for the new pace of life.</span>
+        </h1>
+        <p class="hero-sub">A boutique acupuncture studio in Camden Street. Five-element treatment, plant-based protocols, one practitioner who actually has the time to listen.</p>
+        <div class="hero-ctas">
+          <a href="#book" class="btn-primary">
+            Book a session
+            <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square"/></svg>
+          </a>
+          <a href="#first" class="btn-ghost">How a session works</a>
+        </div>
+      </div>
+
+      <div class="collage">
+        <!-- Botanical 1: hawthorn branch top-left -->
+        <svg class="botanic-1" viewBox="0 0 180 200">
+          <g stroke="#3F5C3A" stroke-width="1.4" fill="none" filter="url(#rough)">
+            <path d="M30 190 Q60 140 80 100 Q100 60 130 30" stroke-width="1.6"/>
+            <ellipse cx="55" cy="155" rx="13" ry="6" transform="rotate(-30 55 155)"/>
+            <ellipse cx="72" cy="135" rx="14" ry="7" transform="rotate(20 72 135)"/>
+            <ellipse cx="78" cy="115" rx="13" ry="6" transform="rotate(-25 78 115)"/>
+            <ellipse cx="95" cy="90" rx="14" ry="7" transform="rotate(30 95 90)"/>
+            <ellipse cx="105" cy="68" rx="12" ry="6" transform="rotate(-15 105 68)"/>
+            <ellipse cx="118" cy="48" rx="14" ry="7" transform="rotate(20 118 48)"/>
+          </g>
+          <g fill="#A03C2A" filter="url(#rough)">
+            <circle cx="90" cy="80" r="3.5"/>
+            <circle cx="100" cy="55" r="3"/>
+            <circle cx="125" cy="42" r="3.5"/>
+            <circle cx="115" cy="60" r="2.8"/>
+          </g>
+        </svg>
+
+        <!-- Photo placeholder 1 (practitioner hands) -->
+        <div class="collage-tile photo-1"></div>
+
+        <!-- Acupuncture needle floating -->
+        <div class="needle-1"></div>
+
+        <!-- Painted-style watercolour blob -->
+        <svg style="position:absolute; top:60px; right:230px; width:180px; height:180px; z-index:2; transform:rotate(15deg)" viewBox="0 0 180 180">
+          <g filter="url(#paint)">
+            <path d="M40 90 Q30 50 70 35 Q120 25 145 65 Q160 110 130 140 Q90 165 60 145 Q30 125 40 90Z" fill="#7C8A6E" opacity="0.45"/>
+          </g>
+        </svg>
+
+        <!-- Photo placeholder 2 (herb study) -->
+        <div class="collage-tile photo-2"></div>
+
+        <!-- Stamp / badge -->
+        <svg class="stamp" viewBox="0 0 110 110">
+          <circle cx="55" cy="55" r="52" fill="none" stroke="#1F1A14" stroke-width="1.2"/>
+          <circle cx="55" cy="55" r="46" fill="none" stroke="#1F1A14" stroke-width="0.6" stroke-dasharray="2 3"/>
+          <text font-family="Fraunces, serif" font-size="11" fill="#1F1A14" letter-spacing="2">
+            <textPath href="#circ" startOffset="0">EST · DUBLIN · 2019 · TCM ·</textPath>
+          </text>
+          <defs><path id="circ" d="M 55 55 m -36 0 a 36 36 0 1 1 72 0 a 36 36 0 1 1 -72 0"/></defs>
+          <text x="55" y="50" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="12" font-weight="300" fill="#A03C2A">@acuwithgigi</text>
+          <text x="55" y="68" text-anchor="middle" font-family="Inter Tight, sans-serif" font-size="7" letter-spacing="2" fill="#1F1A14">CLINIC №01</text>
+        </svg>
+
+        <!-- Botanical 2: bottom-right -->
+        <svg class="botanic-2" viewBox="0 0 220 200">
+          <g stroke="#2A4A6E" stroke-width="1.3" fill="none" filter="url(#rough)">
+            <path d="M20 30 Q60 60 100 90 Q140 120 200 175"/>
+            <path d="M55 60 Q45 80 50 95"/>
+            <path d="M80 80 Q75 105 85 120"/>
+            <path d="M110 105 Q105 130 120 145"/>
+            <path d="M150 135 Q145 158 160 170"/>
+          </g>
+          <g fill="#6B85A4" filter="url(#paint)" opacity="0.85">
+            <circle cx="50" cy="98" r="6"/>
+            <circle cx="85" cy="123" r="7"/>
+            <circle cx="120" cy="148" r="6.5"/>
+            <circle cx="160" cy="172" r="7.5"/>
+          </g>
+          <g fill="#2A4A6E" filter="url(#rough)">
+            <ellipse cx="40" cy="50" rx="8" ry="4" transform="rotate(40 40 50)"/>
+            <ellipse cx="70" cy="70" rx="9" ry="4.5" transform="rotate(35 70 70)"/>
+            <ellipse cx="105" cy="92" rx="10" ry="5" transform="rotate(40 105 92)"/>
+            <ellipse cx="145" cy="120" rx="9" ry="4.5" transform="rotate(35 145 120)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="approach-grid">
+      <div>
+        <div class="approach-label">01 — Approach</div>
+        <h2>Five rhythms inside <em>one body.</em></h2>
+      </div>
+      <div>
+        <p class="approach-lede">In Traditional Chinese Medicine your body holds five rhythms: wood, fire, earth, metal, water. When one runs too loud or too quiet, the others bend around it. Sleep frays, cycles stutter, digestion slows, mood shifts.</p>
+        <p class="approach-lede">Every session begins by listening for which one is leading. The pulse on each wrist, the colour and coat of the tongue, the shape of your week. Then we choose the points that move the rhythm back.</p>
+      </div>
+    </div>
+
+    <div class="elements">
+      <div class="element wood">
+        <div class="element-num">№ 01</div>
+        <svg class="element-svg" viewBox="0 0 70 70">
+          <g stroke="#3F5C3A" stroke-width="1.3" fill="none" filter="url(#rough)">
+            <path d="M35 65 L35 25"/>
+            <path d="M35 45 Q25 38 18 42"/>
+            <path d="M35 35 Q47 28 54 32"/>
+            <path d="M35 28 Q26 22 22 18"/>
+          </g>
+          <g fill="#3F5C3A" filter="url(#paint)" opacity="0.85">
+            <ellipse cx="20" cy="42" rx="8" ry="4" transform="rotate(-25 20 42)"/>
+            <ellipse cx="52" cy="32" rx="9" ry="4.5" transform="rotate(30 52 32)"/>
+            <ellipse cx="22" cy="18" rx="7" ry="3.5" transform="rotate(-40 22 18)"/>
+          </g>
+        </svg>
+        <div class="element-name"><em>Wood</em></div>
+        <div class="element-pair">Liver · Gallbladder</div>
+        <div class="element-body">Stress, anger, stuck qi. The first to seize when life gets noisy.</div>
+      </div>
+
+      <div class="element fire">
+        <div class="element-num">№ 02</div>
+        <svg class="element-svg" viewBox="0 0 70 70">
+          <g filter="url(#paint)">
+            <path d="M35 65 Q20 50 25 35 Q30 25 28 18 Q38 24 42 32 Q50 25 48 18 Q58 35 55 50 Q50 62 35 65Z" fill="#A03C2A" opacity="0.85"/>
+            <path d="M35 60 Q28 52 30 42 Q34 36 35 30 Q40 38 42 45 Q44 55 35 60Z" fill="#C9745E" opacity="0.7"/>
+          </g>
+        </svg>
+        <div class="element-name"><em>Fire</em></div>
+        <div class="element-pair">Heart · Small Intestine</div>
+        <div class="element-body">Sleep, anxiety, the 3am wake-up. The system that holds the mind.</div>
+      </div>
+
+      <div class="element earth">
+        <div class="element-num">№ 03</div>
+        <svg class="element-svg" viewBox="0 0 70 70">
+          <g filter="url(#paint)">
+            <path d="M5 55 L20 35 L30 50 L42 25 L55 45 L65 55 Z" fill="#B58040" opacity="0.85"/>
+            <path d="M5 55 L65 55" stroke="#1F1A14" stroke-width="1" fill="none"/>
+          </g>
+        </svg>
+        <div class="element-name"><em>Earth</em></div>
+        <div class="element-pair">Spleen · Stomach</div>
+        <div class="element-body">Digestion, fatigue, brain fog. The engine that turns food into you.</div>
+      </div>
+
+      <div class="element metal">
+        <div class="element-num">№ 04</div>
+        <svg class="element-svg" viewBox="0 0 70 70">
+          <g stroke="#A89A82" stroke-width="1.3" fill="none" filter="url(#rough)">
+            <path d="M35 12 L35 60"/>
+            <path d="M30 22 Q25 26 24 32"/>
+            <path d="M40 26 Q46 30 47 36"/>
+            <path d="M28 38 Q22 42 21 48"/>
+            <path d="M42 42 Q48 46 49 52"/>
+          </g>
+          <g fill="#A89A82" filter="url(#paint)" opacity="0.75">
+            <ellipse cx="22" cy="34" rx="4" ry="9" transform="rotate(-30 22 34)"/>
+            <ellipse cx="47" cy="38" rx="4" ry="9" transform="rotate(30 47 38)"/>
+            <ellipse cx="20" cy="50" rx="4" ry="9" transform="rotate(-30 20 50)"/>
+            <ellipse cx="49" cy="54" rx="4" ry="9" transform="rotate(30 49 54)"/>
+          </g>
+        </svg>
+        <div class="element-name"><em>Metal</em></div>
+        <div class="element-pair">Lung · Large Intestine</div>
+        <div class="element-body">Breath, skin, grief, letting go. The boundary between inside and out.</div>
+      </div>
+
+      <div class="element water">
+        <div class="element-num">№ 05</div>
+        <svg class="element-svg" viewBox="0 0 70 70">
+          <g filter="url(#paint)">
+            <path d="M5 32 Q15 22 25 32 T45 32 T65 32" stroke="#2A4A6E" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <path d="M5 42 Q15 32 25 42 T45 42 T65 42" stroke="#6B85A4" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M5 52 Q15 42 25 52 T45 52 T65 52" stroke="#2A4A6E" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.6"/>
+          </g>
+        </svg>
+        <div class="element-name"><em>Water</em></div>
+        <div class="element-pair">Kidney · Bladder</div>
+        <div class="element-body">Hormones, fertility, bones, reserves. The deep tank you draw from.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="services-header">
+      <h2>What we treat, <em>and how.</em></h2>
+      <div class="meta">Sessions run 45 to 75 minutes. €85 standard, €95 fertility, €110 first intake.</div>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card wood">
+        <svg class="service-icon" viewBox="0 0 100 100">
+          <g stroke="#3F5C3A" stroke-width="1.6" fill="none" filter="url(#rough)">
+            <path d="M50 92 L50 30"/>
+            <path d="M50 65 Q35 55 25 60"/>
+            <path d="M50 52 Q68 42 78 48"/>
+            <path d="M50 40 Q35 30 28 22"/>
+            <path d="M50 32 Q65 22 72 16"/>
+          </g>
+          <g fill="#3F5C3A" filter="url(#paint)" opacity="0.85">
+            <ellipse cx="28" cy="60" rx="11" ry="5" transform="rotate(-20 28 60)"/>
+            <ellipse cx="76" cy="48" rx="12" ry="6" transform="rotate(25 76 48)"/>
+            <ellipse cx="28" cy="20" rx="10" ry="5" transform="rotate(-35 28 20)"/>
+            <ellipse cx="72" cy="14" rx="11" ry="5.5" transform="rotate(35 72 14)"/>
+          </g>
+        </svg>
+        <div class="service-info">
+          <div class="service-meta">Wood · Liver Qi</div>
+          <h3 class="service-title">Stress & emotion</h3>
+          <p class="service-desc">When the liver's qi is stuck, the whole week feels stuck. We unblock it through scalp, hands, and the inside of the calves. Most patients leave lighter than they walked in.</p>
+        </div>
+        <div class="service-num">01 / 05</div>
+      </div>
+
+      <div class="service-card fire">
+        <svg class="service-icon" viewBox="0 0 100 100">
+          <g filter="url(#paint)">
+            <path d="M50 92 Q28 70 36 50 Q44 36 40 24 Q56 32 62 44 Q72 34 70 24 Q84 48 80 70 Q72 88 50 92Z" fill="#A03C2A" opacity="0.85"/>
+            <path d="M50 86 Q40 76 42 62 Q48 54 50 46 Q58 56 60 66 Q62 78 50 86Z" fill="#C9745E" opacity="0.75"/>
+          </g>
+        </svg>
+        <div class="service-info">
+          <div class="service-meta">Fire · Heart Shen</div>
+          <h3 class="service-title">Sleep & anxiety</h3>
+          <p class="service-desc">Heart-fire keeps you up at three in the morning, then leaves you wired all day. We settle the shen, calm the chest, and rebuild the rhythm. You'll feel it by week two.</p>
+        </div>
+        <div class="service-num">02 / 05</div>
+      </div>
+
+      <div class="service-card water">
+        <svg class="service-icon" viewBox="0 0 100 100">
+          <g filter="url(#paint)">
+            <path d="M5 38 Q22 22 38 38 T70 38 T98 38" stroke="#2A4A6E" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M5 54 Q22 38 38 54 T70 54 T98 54" stroke="#6B85A4" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+            <path d="M5 70 Q22 54 38 70 T70 70 T98 70" stroke="#2A4A6E" stroke-width="2.2" fill="none" stroke-linecap="round" opacity="0.55"/>
+          </g>
+        </svg>
+        <div class="service-info">
+          <div class="service-meta">Water · Kidney Essence</div>
+          <h3 class="service-title">Cycles & fertility</h3>
+          <p class="service-desc">The kidneys hold hormones, reserves, bones. Weekly sessions across three cycles, alongside basal temperature tracking and a printed nourishment protocol. Used by IVF clinics across Dublin.</p>
+        </div>
+        <div class="service-num">03 / 05</div>
+      </div>
+
+      <div class="service-card earth">
+        <svg class="service-icon" viewBox="0 0 100 100">
+          <g filter="url(#paint)">
+            <path d="M5 76 L24 48 L40 70 L58 30 L78 62 L98 76 Z" fill="#B58040" opacity="0.85"/>
+            <path d="M5 76 L98 76" stroke="#1F1A14" stroke-width="1.4" fill="none"/>
+            <circle cx="58" cy="30" r="3" fill="#1F1A14"/>
+          </g>
+        </svg>
+        <div class="service-info">
+          <div class="service-meta">Earth · Spleen Qi</div>
+          <h3 class="service-title">Digestion & energy</h3>
+          <p class="service-desc">If the spleen is tired, no food gives you what it should. Bloating, brain fog, that 3pm crash. We rebuild the engine with needles, moxa, and a short list of foods that actually work.</p>
+        </div>
+        <div class="service-num">04 / 05</div>
+      </div>
+
+      <div class="service-card metal">
+        <svg class="service-icon" viewBox="0 0 100 100">
+          <g stroke="#A89A82" stroke-width="1.8" fill="none" filter="url(#rough)">
+            <path d="M50 18 L50 86"/>
+            <path d="M42 32 Q34 38 32 46"/>
+            <path d="M58 36 Q66 42 68 50"/>
+            <path d="M40 54 Q30 60 28 68"/>
+            <path d="M60 58 Q70 64 72 72"/>
+          </g>
+          <g fill="#A89A82" filter="url(#paint)" opacity="0.78">
+            <ellipse cx="30" cy="48" rx="6" ry="12" transform="rotate(-30 30 48)"/>
+            <ellipse cx="68" cy="52" rx="6" ry="12" transform="rotate(30 68 52)"/>
+            <ellipse cx="28" cy="70" rx="6" ry="12" transform="rotate(-30 28 70)"/>
+            <ellipse cx="70" cy="74" rx="6" ry="12" transform="rotate(30 70 74)"/>
+          </g>
+        </svg>
+        <div class="service-info">
+          <div class="service-meta">Metal · Lung Wei</div>
+          <h3 class="service-title">Skin & breath</h3>
+          <p class="service-desc">Lungs run the skin in Chinese medicine. Eczema, recurring chest infections, the dry Dublin winter cough. We treat the inside, and the outside follows.</p>
+        </div>
+        <div class="service-num">05 / 05</div>
+      </div>
+
+      <div class="service-card wood">
+        <svg class="service-icon" viewBox="0 0 100 100">
+          <g stroke="#3F5C3A" stroke-width="1.4" fill="none" filter="url(#rough)" opacity="0.85">
+            <circle cx="50" cy="50" r="36"/>
+            <circle cx="50" cy="50" r="24"/>
+            <circle cx="50" cy="50" r="12"/>
+          </g>
+          <g fill="#3F5C3A" filter="url(#paint)">
+            <circle cx="50" cy="50" r="4"/>
+          </g>
+        </svg>
+        <div class="service-info">
+          <div class="service-meta">Cosmetic · Facial Acupuncture</div>
+          <h3 class="service-title">Facial rejuvenation</h3>
+          <p class="service-desc">Forty fine needles across the face and scalp, jade gua sha, LED red-light close. Course of six. Real results, no filler, no marketing.</p>
+        </div>
+        <div class="service-num">+ ADD-ON</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FIRST SESSION -->
+<section class="first" id="first">
+  <div class="wrap">
+    <div class="first-intro">
+      <div class="label">02 — Your first session</div>
+      <h2>Ninety minutes <em>to read the body.</em></h2>
+    </div>
+
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-num">i.</div>
+        <h3 class="step-title">Intake</h3>
+        <p class="step-text">We talk about sleep, appetite, cycle, mood, how often you sigh. Then we read your pulse on both wrists and look at your tongue. No paperwork shortcuts.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">ii.</div>
+        <h3 class="step-title">Treatment</h3>
+        <p class="step-text">Forty-five minutes on a heated table. Twelve to twenty very fine needles, sometimes moxa, sometimes cupping. You'll feel a few of them. Most patients fall asleep.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">iii.</div>
+        <h3 class="step-title">Aftercare</h3>
+        <p class="step-text">A printed protocol: foods, herbs, simple rituals for the week. We don't recommend supplements you can't pronounce. We do recommend a hot foot soak before bed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTITIONER -->
+<section class="practitioner" id="practitioner">
+  <div class="wrap">
+    <div class="prac-grid">
+      <div class="portrait-block">
+        <div class="portrait"></div>
+        <div class="portrait-stamp">
+          <span>One</span>
+          <span>Practitioner</span>
+        </div>
+      </div>
+      <div class="prac-content">
+        <div class="label">03 — Practitioner</div>
+        <h2>Aoife Gallagher, <em>M.Sc. TCM.</em></h2>
+        <p>Trained in Beijing under Dr. Wang Ju-Yi, qualified in London at the College of Integrated Chinese Medicine, practising in Dublin since 2019. A background in nursing before all of it, which is where the listening comes from.</p>
+        <p>Special focus on stress-driven sleep loss, hormonal regulation, fertility support, and post-illness recovery. Forty-five minutes per treatment, never less. One patient at a time, never doubled.</p>
+        <div class="prac-credentials">
+          <div>
+            <div class="cred-label">Registration</div>
+            <div class="cred-value">Acupuncture Council Ireland</div>
+          </div>
+          <div>
+            <div class="cred-label">Training</div>
+            <div class="cred-value">Beijing · London · Dublin</div>
+          </div>
+          <div>
+            <div class="cred-label">In practice since</div>
+            <div class="cred-value">2019</div>
+          </div>
+          <div>
+            <div class="cred-label">Languages</div>
+            <div class="cred-value">English · Irish · Mandarin</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="wrap">
+    <div class="test-label">04 — What patients say</div>
+    <div class="test-grid">
+      <div class="test-card">
+        <p class="test-quote">"I came in for a frozen shoulder and left with my sleep back. <em>I'm still not entirely sure how she did it.</em>"</p>
+        <p class="test-attr">Niamh K. · Ranelagh · 3 sessions</p>
+      </div>
+      <div class="test-card">
+        <p class="test-quote">"Three years of cycle issues, twelve weeks of treatment, and I'm pregnant. <em>It's the needles. It's also the listening.</em>"</p>
+        <p class="test-attr">Sarah M. · Stoneybatter · 12 sessions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book">
+  <div class="wrap">
+    <h2>
+      Find a time
+      <em>to be quiet.</em>
+    </h2>
+    <p class="book-details">The studio sits above the bakery on Camden Street, Dublin 2. Tuesday through Saturday, 9 to 7. New patients allowed on Wednesdays and Fridays.</p>
+    <a href="#" class="btn-primary">
+      Open the booking calendar
+      <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        @acuwithgigi
+        <em>Acupuncture & TCM</em>
+      </div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <p>14a Camden Street Lower<br>Dublin 2 · D02 XR89<br>Above Two Pups Bakery</p>
+      </div>
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <p>Tue–Fri · 9–7<br>Saturday · 10–4<br>Closed Sunday & Monday</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@acuwithgigi.com">hello@acuwithgigi.com</a>
+        <a href="tel:+353015551234">+353 1 555 1234</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 @acuwithgigi · Acupuncture & TCM</span>
+      <span>Mockup · Orion project · Henry López</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
