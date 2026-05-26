@@ -1226,7 +1226,164 @@ footer .wrap { color: var(--paper-deep); }
   letter-spacing: 0.05em;
 }
 
-/* ============ RESPONSIVE ============ */
+/* ============ MOBILE: REELS-STYLE SNAP SCROLL ============ */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  html, body { overflow-x: hidden; }
+
+  /* Every major editorial moment becomes a 100vh "reel" */
+  .hero,
+  .page-hero,
+  .teasers,
+  .practitioner,
+  .testimonials,
+  .book,
+  .book-teaser,
+  .book-form-wrap,
+  .pricing,
+  .prac-extended,
+  .first .first-intro,
+  .notes,
+  footer {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    min-height: 100dvh;
+    scroll-margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 90px;
+    padding-bottom: 50px;
+  }
+  /* Tall sections allowed to overflow inside their snap point */
+  .hero, .page-hero, .practitioner, .prac-extended, .notes { padding-top: 80px; padding-bottom: 60px; }
+
+  /* Individual cards inside grids become their own snap points */
+  .teaser,
+  .service-card,
+  .element,
+  .element-detail,
+  .test-card,
+  .step-card,
+  .photo-inset {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    padding: 90px 24px 50px !important;
+    border: none !important;
+    background: transparent !important;
+    margin: 0 !important;
+  }
+
+  /* Reset grid containers so children flow vertically as snap points */
+  .teaser-grid, .service-grid, .elements, .test-grid, .steps {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+    border: none !important;
+  }
+
+  /* Centering inside each reel */
+  .hero-grid, .approach-grid, .services-header, .prac-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  .hero-text { text-align: left; }
+  .hero h1 { font-size: clamp(46px, 13vw, 64px) !important; }
+  .hero-sub { font-size: 16px; }
+  .collage { height: 380px; transform: scale(0.85); transform-origin: center; }
+
+  .page-hero h1 { font-size: clamp(40px, 11vw, 56px) !important; max-width: 100% !important; }
+  .page-hero .lede { font-size: 16px; max-width: 100% !important; }
+  .page-hero-photo, .page-hero-stamp { display: none; }
+
+  /* Teaser cards as reels */
+  .teaser-num { font-size: 13px; }
+  .teaser-title { font-size: clamp(36px, 10vw, 52px) !important; }
+  .teaser-desc { font-size: 16px; }
+
+  /* Service cards as reels */
+  .service-card { grid-template-columns: 1fr !important; gap: 24px !important; }
+  .service-icon { width: 90px; height: 90px; }
+  .service-title { font-size: 36px !important; }
+  .service-desc { font-size: 16px; max-width: 100%; }
+  .service-num { display: none; }
+
+  /* Element cards as reels */
+  .element { border-top: none; padding-top: 90px !important; }
+  .element-svg { position: relative; top: auto; left: auto; width: 80px; height: 80px; margin-bottom: 20px; }
+  .element-num { margin-bottom: 20px; }
+  .element-name { font-size: 56px; }
+
+  /* Element detail (approach page) */
+  .element-detail .side { position: static; }
+  .element-detail .side svg { width: 100px; height: 100px; margin-bottom: 20px; }
+  .element-detail .side .name { font-size: 56px; }
+  .element-detail .body h3 { font-size: 20px; margin-top: 24px; }
+  .element-detail .body h3:first-child { margin-top: 16px; }
+  .element-detail .body p { font-size: 15px; max-width: 100%; }
+
+  /* Photo insets — image + quote both visible */
+  .photo-inset { gap: 24px !important; }
+  .photo-inset .img { height: 240px !important; }
+  .photo-inset .quote { font-size: 24px; line-height: 1.25; }
+
+  /* Testimonials */
+  .test-quote { font-size: 22px; line-height: 1.35; }
+  .test-card { padding: 90px 24px 50px !important; }
+  .test-card:first-child { border-bottom: none !important; padding-bottom: 50px !important; }
+
+  /* Steps */
+  .step-num { font-size: 72px; }
+
+  /* Book big CTA */
+  .book h2 { font-size: clamp(54px, 14vw, 80px) !important; }
+  .book-teaser h2 { font-size: clamp(40px, 11vw, 60px) !important; }
+
+  /* Pricing */
+  .pricing { padding: 90px 0 50px; }
+  .pricing-row { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+  .pricing-name { font-size: 19px; }
+  .pricing-price { text-align: left; font-size: 20px; }
+
+  /* Practitioner section */
+  .portrait-block { height: 360px; }
+  .prac-content h2 { font-size: clamp(36px, 10vw, 52px) !important; }
+
+  /* Book form: each major step its own snap moment */
+  .book-form-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
+
+  /* Footer */
+  footer { padding-top: 70px !important; padding-bottom: 40px !important; }
+  .foot-grid { grid-template-columns: 1fr !important; gap: 30px; margin-bottom: 40px; }
+  .foot-brand { font-size: 44px; }
+  .foot-bottom { flex-direction: column; gap: 10px; }
+
+  /* Hide nav background blur on mobile to save paint */
+  nav.top { padding: 14px 20px; }
+  nav.top .brand { font-size: 22px; }
+
+  /* Wrap padding tighter */
+  .wrap { padding: 0 24px; }
+
+  /* Hide decorative botanicals on tight mobile to reduce noise */
+  .deco-img.pressed-flowers,
+  .deco-img.olive-branch { opacity: 0.35; }
+
+  /* Disable fixed bg-attachment on mobile (poor iOS perf) */
+  body { background-attachment: scroll, scroll, scroll, scroll, scroll, scroll, scroll, scroll; }
+}
+
+/* ============ RESPONSIVE (TABLET + SMALL DESKTOP) ============ */
 @media (max-width: 980px) {
   .wrap { padding: 0 24px; }
   nav.top { padding: 18px 24px; }
