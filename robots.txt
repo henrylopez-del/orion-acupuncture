@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /img/.git*
+
+Sitemap: https://henrylopez-del.github.io/orion-acupuncture/sitemap.xml
