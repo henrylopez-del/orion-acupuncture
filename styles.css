@@ -308,6 +308,7 @@ nav.top .links a.muted { color: var(--muted); }
 }
 .page-hero-photo.hands { background-image: url('img/hero-hands.jpg'); filter: sepia(0.18) contrast(1.05); }
 .page-hero-photo.needles { background-image: url('img/hero-needles.jpg'); }
+.page-hero-photo.gua-sha { background-image: url('img/gua-sha.jpg'); }
 .page-hero-photo.small { width: 180px; height: 230px; }
 .page-hero-stamp {
   position: absolute;
@@ -342,6 +343,15 @@ nav.top .links a.muted { color: var(--muted); }
 .photo-inset.flip .img { transform: rotate(2deg); }
 .photo-inset .img.hands { background-image: url('img/hero-hands.jpg'); filter: sepia(0.18) contrast(1.05); }
 .photo-inset .img.needles { background-image: url('img/hero-needles.jpg'); }
+.photo-inset .img.gua-sha { background-image: url('img/gua-sha.jpg'); }
+.photo-inset .img.thorns { background-image: url('img/thorns.jpg'); }
+.photo-inset .img.tea-stamps {
+  background-image: url('img/tea-stamps.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--paper-deep);
+  background-position: center;
+}
 .photo-inset .caption-block {
   padding: 20px 0;
 }
@@ -377,8 +387,19 @@ nav.top .links a.muted { color: var(--muted); }
   opacity: 0.55;
   pointer-events: none;
 }
+.deco-img {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+}
+.deco-img.pressed-flowers { background-image: url('img/pressed-flowers.jpg'); }
+.deco-img.thorns { background-image: url('img/thorns.jpg'); }
 @media (max-width: 980px) {
-  .deco { display: none; }
+  .deco, .deco-img { display: none; }
 }
 
 /* ============ APPROACH ============ */
