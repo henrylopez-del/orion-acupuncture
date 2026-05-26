@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Approach — @acuwithgigi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="2"/>
+      <feDisplacementMap in="SourceGraphic" scale="3"/>
+    </filter>
+    <filter id="paint">
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="2" seed="5"/>
+      <feDisplacementMap in="SourceGraphic" scale="5"/>
+    </filter>
+  </defs>
+</svg>
+
+<nav class="top">
+  <a href="index.html" class="brand">
+    <svg class="brand-mark" viewBox="0 0 22 22">
+      <circle cx="11" cy="11" r="9" fill="none" stroke="#1F1A14" stroke-width="1.4"/>
+      <circle cx="11" cy="6" r="1.2" fill="#1F1A14"/>
+      <circle cx="16" cy="11" r="1.2" fill="#1F1A14"/>
+      <circle cx="11" cy="16" r="1.2" fill="#1F1A14"/>
+      <circle cx="6" cy="11" r="1.2" fill="#1F1A14"/>
+    </svg>
+    @acuwithgigi
+  </a>
+  <div class="links">
+    <a href="approach.html" class="active">Approach</a>
+    <a href="services.html">Services</a>
+    <a href="first-session.html">First session</a>
+    <a href="practitioner.html">Practitioner</a>
+    <a href="#" class="muted">Journal</a>
+  </div>
+  <a href="book.html" class="btn-book">Book a session</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumb">
+      <a href="index.html">@acuwithgigi</a>
+      <span class="crumb-sep">/</span>
+      <span>Approach</span>
+    </div>
+    <h1 class="water">Five rhythms <em>inside one body.</em></h1>
+    <p class="lede">In Traditional Chinese Medicine your body holds five rhythms. When one runs too loud or too quiet, the others bend around it. Sleep frays, cycles stutter, digestion slows, mood shifts. Every session begins by listening for which one is leading.</p>
+  </div>
+</section>
+
+<!-- ELEMENT DETAILS -->
+<section style="padding: 60px 0 120px;">
+  <div class="wrap">
+
+    <div class="element-detail wood">
+      <div class="side">
+        <svg viewBox="0 0 70 70">
+          <g stroke="#3F5C3A" stroke-width="1.3" fill="none" filter="url(#rough)">
+            <path d="M35 65 L35 25"/>
+            <path d="M35 45 Q25 38 18 42"/>
+            <path d="M35 35 Q47 28 54 32"/>
+            <path d="M35 28 Q26 22 22 18"/>
+          </g>
+          <g fill="#3F5C3A" filter="url(#paint)" opacity="0.85">
+            <ellipse cx="20" cy="42" rx="8" ry="4" transform="rotate(-25 20 42)"/>
+            <ellipse cx="52" cy="32" rx="9" ry="4.5" transform="rotate(30 52 32)"/>
+            <ellipse cx="22" cy="18" rx="7" ry="3.5" transform="rotate(-40 22 18)"/>
+          </g>
+        </svg>
+        <div class="name">Wood</div>
+        <div class="organs">№ 01 · Liver · Gallbladder · Spring</div>
+      </div>
+      <div class="body">
+        <h3>What it runs</h3>
+        <p>Wood holds the smooth flow of qi through the body. The liver stores blood, regulates emotion, and keeps energy moving evenly. The gallbladder makes the decisions wood has to make. Tendons, ligaments, eyes, the sides of the head.</p>
+        <h3>When it stalls</h3>
+        <p>Irritability without a trigger. Tension in the shoulders and the sides of the neck. Periods that arrive with PMS and clots. Headaches at the temples. Frustration that feels disproportionate. Decisions that take days.</p>
+        <h3>How we move it</h3>
+        <ul>
+          <li>Liver 3 between the first and second toes, the most-used point in the clinic</li>
+          <li>Scalp lines along the temples to release pressure</li>
+          <li>Cupping on the upper back when stress lives in the shoulders</li>
+          <li>A short herbal formula for cycle support, two weeks at a time</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="element-detail fire">
+      <div class="side">
+        <svg viewBox="0 0 70 70">
+          <g filter="url(#paint)">
+            <path d="M35 65 Q20 50 25 35 Q30 25 28 18 Q38 24 42 32 Q50 25 48 18 Q58 35 55 50 Q50 62 35 65Z" fill="#A03C2A" opacity="0.85"/>
+            <path d="M35 60 Q28 52 30 42 Q34 36 35 30 Q40 38 42 45 Q44 55 35 60Z" fill="#C9745E" opacity="0.7"/>
+          </g>
+        </svg>
+        <div class="name">Fire</div>
+        <div class="organs">№ 02 · Heart · Small Intestine · Summer</div>
+      </div>
+      <div class="body">
+        <h3>What it runs</h3>
+        <p>Fire holds the mind, what Chinese medicine calls shen. The heart governs awareness, joy, and the quality of sleep. The small intestine sorts what is worth keeping from what is not, at the level of food and at the level of thought.</p>
+        <h3>When it stalls</h3>
+        <p>Waking at three in the morning with a busy mind. Anxiety that flares without a cause. Heart palpitations on a quiet afternoon. Tongue tip very red. Speech that runs ahead of the room.</p>
+        <h3>How we move it</h3>
+        <ul>
+          <li>Heart 7 at the wrist, the calming pulse point</li>
+          <li>Pericardium 6 for chest tension and racing thoughts</li>
+          <li>Yin Tang between the brows when sleep is the symptom</li>
+          <li>Warm foot soaks with mugwort, fifteen minutes before bed</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="element-detail earth">
+      <div class="side">
+        <svg viewBox="0 0 70 70">
+          <g filter="url(#paint)">
+            <path d="M5 55 L20 35 L30 50 L42 25 L55 45 L65 55 Z" fill="#B58040" opacity="0.85"/>
+            <path d="M5 55 L65 55" stroke="#1F1A14" stroke-width="1" fill="none"/>
+          </g>
+        </svg>
+        <div class="name">Earth</div>
+        <div class="organs">№ 03 · Spleen · Stomach · Late summer</div>
+      </div>
+      <div class="body">
+        <h3>What it runs</h3>
+        <p>Earth is the engine. The spleen transforms food and fluids into the qi and blood the rest of the body lives on. The stomach receives. Muscles, the centre of the body, the way you actually digest the day.</p>
+        <h3>When it stalls</h3>
+        <p>Bloating after lunch. The 3pm crash with no obvious cause. Brain fog. Loose stools that come and go. Sweet cravings late in the afternoon. The feeling that no food gives you what it should.</p>
+        <h3>How we move it</h3>
+        <ul>
+          <li>Stomach 36 below the knee, a point that builds you back up over weeks</li>
+          <li>Spleen 6 on the inside of the calf for energy and cycle steadiness</li>
+          <li>Direct moxa over the navel when digestion runs cold</li>
+          <li>A list of foods that actually rebuild qi — short, cooked, warming</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="element-detail metal">
+      <div class="side">
+        <svg viewBox="0 0 70 70">
+          <g stroke="#A89A82" stroke-width="1.3" fill="none" filter="url(#rough)">
+            <path d="M35 12 L35 60"/>
+            <path d="M30 22 Q25 26 24 32"/>
+            <path d="M40 26 Q46 30 47 36"/>
+            <path d="M28 38 Q22 42 21 48"/>
+            <path d="M42 42 Q48 46 49 52"/>
+          </g>
+          <g fill="#A89A82" filter="url(#paint)" opacity="0.75">
+            <ellipse cx="22" cy="34" rx="4" ry="9" transform="rotate(-30 22 34)"/>
+            <ellipse cx="47" cy="38" rx="4" ry="9" transform="rotate(30 47 38)"/>
+            <ellipse cx="20" cy="50" rx="4" ry="9" transform="rotate(-30 20 50)"/>
+            <ellipse cx="49" cy="54" rx="4" ry="9" transform="rotate(30 49 54)"/>
+          </g>
+        </svg>
+        <div class="name">Metal</div>
+        <div class="organs">№ 04 · Lung · Large Intestine · Autumn</div>
+      </div>
+      <div class="body">
+        <h3>What it runs</h3>
+        <p>Metal holds the boundary between inside and out. The lung governs breath, skin, and the immune barrier we call wei qi. The large intestine releases what no longer serves. Grief lives here, and so does the capacity to let it pass through.</p>
+        <h3>When it stalls</h3>
+        <p>Eczema that flares with stress. A dry cough that lingers after a cold. Recurring chest infections in the Dublin winter. A nose that runs at the start of every season. Grief that hasn't finished moving.</p>
+        <h3>How we move it</h3>
+        <ul>
+          <li>Lung 7 at the wrist, for cough and grief together</li>
+          <li>Large Intestine 4 in the web of the hand, to release the surface</li>
+          <li>Gua sha across the upper back when wind has lodged there</li>
+          <li>Warm congee with white foods through the season — pear, lily bulb, almond</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="element-detail water">
+      <div class="side">
+        <svg viewBox="0 0 70 70">
+          <g filter="url(#paint)">
+            <path d="M5 32 Q15 22 25 32 T45 32 T65 32" stroke="#2A4A6E" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <path d="M5 42 Q15 32 25 42 T45 42 T65 42" stroke="#6B85A4" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M5 52 Q15 42 25 52 T45 52 T65 52" stroke="#2A4A6E" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.6"/>
+          </g>
+        </svg>
+        <div class="name">Water</div>
+        <div class="organs">№ 05 · Kidney · Bladder · Winter</div>
+      </div>
+      <div class="body">
+        <h3>What it runs</h3>
+        <p>Water is the deep tank. The kidneys hold essence, hormones, bones, fertility, the will to keep going. The bladder receives. Fear lives here in a primal sense, and so does the steadiness that lets you face what you actually have to.</p>
+        <h3>When it stalls</h3>
+        <p>Burnout that doesn't lift with one weekend off. Lower-back ache that comes with stress. Cycles that lengthen or skip. Tinnitus. Premature greying. The feeling that you are running on a credit line your body has not approved.</p>
+        <h3>How we move it</h3>
+        <ul>
+          <li>Kidney 3 at the inner ankle, the point that refills the tank slowly</li>
+          <li>Bladder 23 on the lower back for adrenal fatigue</li>
+          <li>Ren 4 below the navel for fertility protocols and post-illness recovery</li>
+          <li>Earlier nights for two weeks, the most underrated prescription in the clinic</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOK TEASER -->
+<section class="book-teaser">
+  <div class="wrap">
+    <h2>Ready to read <em>your rhythm?</em></h2>
+    <p>The first session takes ninety minutes. We listen first, treat second, send you home with a printed protocol.</p>
+    <a href="book.html" class="btn-primary">
+      Book a session
+      <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square"/></svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">@acuwithgigi<em>Acupuncture & TCM</em></div>
+      <div class="foot-col">
+        <h4>Visit</h4>
+        <p>14a Camden Street Lower<br>Dublin 2 · D02 XR89<br>Above Two Pups Bakery</p>
+      </div>
+      <div class="foot-col">
+        <h4>Hours</h4>
+        <p>Tue–Fri · 9–7<br>Saturday · 10–4<br>Closed Sunday & Monday</p>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="mailto:hello@acuwithgigi.com">hello@acuwithgigi.com</a>
+        <a href="tel:+353015551234">+353 1 555 1234</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 @acuwithgigi · Acupuncture & TCM</span>
+      <span>Mockup · Orion project · Henry López</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
