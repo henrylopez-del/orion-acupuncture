@@ -352,18 +352,8 @@ nav.top .links a.muted { color: var(--muted); }
   background-color: var(--paper-deep);
   background-position: center;
 }
-.photo-inset .img.contain {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: var(--paper-deep);
-  background-position: center;
-}
-.photo-inset .img.acu-chart { background-image: url('img/acu-chart-vintage.jpg'); }
-.photo-inset .img.acu-chart-jp { background-image: url('img/acu-chart-japanese.jpg'); }
-.photo-inset .img.herb-grid { background-image: url('img/herb-orange.jpg'); }
-.photo-inset .img.herb-huangqin { background-image: url('img/herb-huangqin.jpg'); }
-.photo-inset .img.herb-oenanthe { background-image: url('img/herb-oenanthe.jpg'); }
-.photo-inset .img.moxa-chart { background-image: url('img/moxa-chart.jpg'); }
+.photo-inset .img.treatment-room { background-image: url('img/treatment-room.jpg'); }
+.photo-inset .img.olive-branch { background-image: url('img/olive-branch.jpg'); }
 .photo-inset .caption-block {
   padding: 20px 0;
 }
@@ -410,9 +400,7 @@ nav.top .links a.muted { color: var(--muted); }
 }
 .deco-img.pressed-flowers { background-image: url('img/pressed-flowers.jpg'); }
 .deco-img.thorns { background-image: url('img/thorns.jpg'); }
-.deco-img.moxa-chart { background-image: url('img/moxa-chart.jpg'); background-size: contain; background-repeat: no-repeat; }
-.deco-img.acu-chart-jp { background-image: url('img/acu-chart-japanese.jpg'); background-size: contain; background-repeat: no-repeat; }
-.deco-img.herb-huangqin { background-image: url('img/herb-huangqin.jpg'); background-size: contain; background-repeat: no-repeat; }
+.deco-img.olive-branch { background-image: url('img/olive-branch.jpg'); }
 @media (max-width: 980px) {
   .deco, .deco-img { display: none; }
 }
