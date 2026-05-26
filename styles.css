@@ -1298,9 +1298,12 @@ footer .wrap { color: var(--paper-deep); }
     gap: 30px !important;
   }
   .hero-text { text-align: left; }
-  .hero h1 { font-size: clamp(46px, 13vw, 64px) !important; }
-  .hero-sub { font-size: 16px; }
-  .collage { height: 380px; transform: scale(0.85); transform-origin: center; }
+  .hero { height: 100vh; height: 100dvh; overflow: hidden; padding-top: 70px !important; padding-bottom: 20px !important; }
+  .hero h1 { font-size: clamp(40px, 11vw, 54px) !important; margin-bottom: 22px !important; }
+  .hero-sub { font-size: 15px; margin-bottom: 26px !important; }
+  .hero-eyebrow { margin-bottom: 18px !important; font-size: 11px; }
+  .collage { height: 240px; transform: scale(0.62); transform-origin: top center; margin-top: -30px !important; }
+  .hero-grid { gap: 12px !important; }
 
   .page-hero h1 { font-size: clamp(40px, 11vw, 56px) !important; max-width: 100% !important; }
   .page-hero .lede { font-size: 16px; max-width: 100% !important; }

@@ -240,13 +240,12 @@
   </div>
 </footer>
 
+<script src="reels.js" defer></script>
 <script>
 // Pill toggle for mockup
 document.querySelectorAll('.pill-group').forEach(group => {
   group.addEventListener('click', e => {
     if (!e.target.classList.contains('pill')) return;
-    const isMultiSelect = group.querySelectorAll('.pill.selected').length >= 1 && !group.dataset.single;
-    // For "What you're booking" — single select
     const firstField = group.closest('.field');
     if (firstField && firstField.querySelector('label').textContent.includes("booking")) {
       group.querySelectorAll('.pill').forEach(p => p.classList.remove('selected'));
