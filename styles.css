@@ -27,7 +27,18 @@ body {
   font-weight: 400;
   color: var(--text);
   background-color: var(--paper);
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.93 0 0 0 0 0.86 0 0 0 0 0.73 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-image:
+    radial-gradient(ellipse 900px 700px at 10% 12%, rgba(181,128,64,0.10), transparent 65%),
+    radial-gradient(ellipse 700px 500px at 92% 28%, rgba(160,60,42,0.05), transparent 60%),
+    radial-gradient(ellipse 800px 600px at 50% 55%, rgba(31,26,20,0.05), transparent 65%),
+    radial-gradient(ellipse 500px 700px at 5% 80%, rgba(63,92,58,0.05), transparent 60%),
+    radial-gradient(ellipse 600px 400px at 95% 95%, rgba(168,123,67,0.08), transparent 60%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nf'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.6' numOctaves='3' stitchTiles='stitch' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.45 0 0 0 0 0.28 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nf)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nm'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='2' stitchTiles='stitch' seed='9'/%3E%3CfeColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.68 0 0 0 0 0.5 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nm)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 1200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='nc'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.08' numOctaves='2' stitchTiles='stitch' seed='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.4 0 0 0 0 0.22 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23nc)'/%3E%3C/svg%3E");
+  background-attachment: fixed, fixed, fixed, fixed, fixed, fixed, fixed, fixed;
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 220px 220px, 600px 600px, 1200px 1200px;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat, repeat;
   line-height: 1.55;
   font-size: 16px;
   overflow-x: hidden;
@@ -277,6 +288,97 @@ nav.top .links a.muted { color: var(--muted); }
   max-width: 700px;
   color: var(--text);
   margin-bottom: 32px;
+}
+
+/* ============ INNER-PAGE PHOTO + DECO ============ */
+.page-hero { position: relative; }
+.page-hero .wrap { position: relative; z-index: 2; }
+.page-hero-photo {
+  position: absolute;
+  top: 130px;
+  right: 6%;
+  width: 250px;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  transform: rotate(-3deg);
+  box-shadow: 0 30px 60px -20px rgba(31,26,20,0.35);
+  z-index: 1;
+}
+.page-hero-photo.hands { background-image: url('img/hero-hands.jpg'); filter: sepia(0.18) contrast(1.05); }
+.page-hero-photo.needles { background-image: url('img/hero-needles.jpg'); }
+.page-hero-photo.small { width: 180px; height: 230px; }
+.page-hero-stamp {
+  position: absolute;
+  top: 380px;
+  right: 4%;
+  width: 90px;
+  height: 90px;
+  z-index: 2;
+  transform: rotate(8deg);
+}
+@media (max-width: 980px) {
+  .page-hero-photo, .page-hero-stamp { display: none; }
+}
+
+.photo-inset {
+  margin: 100px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+}
+.photo-inset .img {
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 0 40px 60px -20px rgba(31,26,20,0.3);
+  transform: rotate(-1.5deg);
+  position: relative;
+}
+.photo-inset.flip .img { transform: rotate(2deg); }
+.photo-inset .img.hands { background-image: url('img/hero-hands.jpg'); filter: sepia(0.18) contrast(1.05); }
+.photo-inset .img.needles { background-image: url('img/hero-needles.jpg'); }
+.photo-inset .caption-block {
+  padding: 20px 0;
+}
+.photo-inset .quote {
+  font-family: var(--serif);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 30px;
+}
+.photo-inset .quote em { font-style: normal; color: var(--wood); }
+.photo-inset .small-meta {
+  font-family: var(--sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin-top: 16px;
+}
+@media (max-width: 980px) {
+  .photo-inset { grid-template-columns: 1fr; gap: 30px; margin: 60px 0; }
+  .photo-inset .img { height: 320px; }
+}
+
+/* Free-floating botanical decorations */
+.deco {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+}
+@media (max-width: 980px) {
+  .deco { display: none; }
 }
 
 /* ============ APPROACH ============ */
