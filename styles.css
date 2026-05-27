@@ -1221,8 +1221,95 @@ footer .wrap { color: var(--paper-deep); }
 }
 
 
+/* ============ HOME ELEMENT STRIP (preview of approach) ============ */
+.element-strip {
+  padding: 100px 0;
+  border-top: 1px solid rgba(31,26,20,0.12);
+  position: relative;
+}
+.element-strip .strip-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.element-strip h3 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  margin-bottom: 60px;
+  max-width: 800px;
+}
+.element-strip h3 em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-weight: 300;
+  color: var(--water);
+}
+.element-strip .element-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 36px;
+  align-items: start;
+  margin-bottom: 50px;
+}
+.element-strip .el {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.element-strip .el svg { width: 64px; height: 64px; }
+.element-strip .el .name {
+  font-family: var(--serif);
+  font-size: 24px;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  margin-top: 4px;
+}
+.element-strip .el .name em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-weight: 400;
+}
+.element-strip .el .pair {
+  font-family: var(--sans);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+.element-strip .el.wood  .name em { color: var(--wood); }
+.element-strip .el.fire  .name em { color: var(--fire); }
+.element-strip .el.earth .name em { color: var(--earth); }
+.element-strip .el.metal .name em { color: var(--metal-deep); }
+.element-strip .el.water .name em { color: var(--water); }
+.element-strip .see-more {
+  font-family: var(--sans);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 6px;
+}
+
 /* ============ RESPONSIVE (TABLET + SMALL DESKTOP) ============ */
 @media (max-width: 980px) {
+  .element-strip { padding: 60px 0; }
+  .element-strip h3 { margin-bottom: 40px; }
+  .element-strip .element-row { grid-template-columns: 1fr 1fr; gap: 36px 20px; }
+
   .wrap { padding: 0 24px; }
   nav.top { padding: 18px 24px; }
   nav.top .links { display: none; }
