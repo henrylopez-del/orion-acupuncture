@@ -1220,20 +1220,18 @@ footer .wrap { color: var(--paper-deep); }
   letter-spacing: 0.05em;
 }
 
-/* ============ MOBILE: REELS-STYLE SNAP SCROLL ============ */
+/* ============ TIKTOK CONTAINER (Arqalum pattern) ============ */
+/* Desktop: container is transparent passthrough. Mobile: dedicated scroll-snap container. */
+.tiktok-container { position: relative; }
+.nav-dots { display: none; }
+
 @media (max-width: 768px) {
-  /* Body becomes the snap container (Aurion pattern). Native iOS momentum + snap. */
-  html { height: 100%; overflow: hidden; }
+  html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
   body {
-    height: 100vh;
-    height: 100dvh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-snap-type: y mandatory;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-y: contain;
-    scroll-behavior: smooth;
-    /* Strip heavy paper texture on mobile: single noise, no fixed attachment */
     background-image:
       radial-gradient(ellipse 700px 600px at 15% 15%, rgba(181,128,64,0.10), transparent 65%),
       radial-gradient(ellipse 600px 500px at 90% 85%, rgba(168,123,67,0.08), transparent 60%),
@@ -1242,11 +1240,51 @@ footer .wrap { color: var(--paper-deep); }
     background-size: 100% 100%, 100% 100%, 300px 300px;
     background-repeat: no-repeat, no-repeat, repeat;
   }
-  /* Strip backdrop-filter blur (expensive on iOS) */
+  .tiktok-container {
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .tiktok-container::-webkit-scrollbar { display: none; }
   nav.top {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: rgba(242,235,220,0.96);
+  }
+
+  /* Nav dots — progress indicator */
+  .nav-dots {
+    position: fixed;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 200;
+    pointer-events: auto;
+  }
+  .nav-dots .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(31,26,20,0.22);
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+  .nav-dots .dot.active {
+    background: var(--ink);
+    width: 8px;
+    height: 22px;
+    border-radius: 4px;
   }
 
   /* Every major editorial moment is a full-screen reel */
