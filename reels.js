@@ -1,35 +1,21 @@
-/* @acuwithgigi mobile reels.
-   Arqalum pattern: .tiktok-container scrolls, slides snap, nav-dots track position. */
+/* @acuwithgigi mobile reels — designed 9:16 slides.
+   Pattern: .tiktok-container scrolls, .reel slides snap, .nav-dots tracks. */
 (function () {
-  const isMobile = window.matchMedia('(max-width: 768px)').matches;
-  if (!isMobile) return;
+  if (!window.matchMedia('(max-width: 768px)').matches) return;
 
   const container = document.querySelector('.tiktok-container');
   const dotsHost = document.querySelector('.nav-dots');
   if (!container || !dotsHost) return;
 
-  const SLIDE_SELECTOR = [
-    '.hero',
-    '.page-hero',
-    '.teaser',
-    '.service-card',
-    '.element',
-    '.element-detail',
-    '.test-card',
-    '.step-card',
-    '.photo-inset',
-    '.practitioner',
-    '.prac-extended',
-    '.pricing',
-    '.notes',
-    '.first-intro',
-    '.book',
-    '.book-teaser',
-    '.book-form-wrap',
-    'footer'
-  ].join(',');
-
-  const slides = Array.from(container.querySelectorAll(SLIDE_SELECTOR));
+  // Prefer new designed reels; fall back to legacy section-based snap if absent
+  let slides = Array.from(container.querySelectorAll('.reels-mobile .reel'));
+  if (!slides.length) {
+    slides = Array.from(container.querySelectorAll(
+      '.hero, .page-hero, .teaser, .service-card, .element, .element-detail, ' +
+      '.test-card, .step-card, .photo-inset, .practitioner, .prac-extended, ' +
+      '.pricing, .notes, .first-intro, .book, .book-teaser, .book-form-wrap, footer'
+    ));
+  }
   if (!slides.length) return;
 
   // Build dots
@@ -45,16 +31,11 @@
     return dot;
   });
 
-  // Cap visible dots at 12 so the column doesn't get crazy long
   const MAX_VISIBLE = 12;
   if (dots.length > MAX_VISIBLE) {
-    // Hide overflow dots but keep them in DOM for tracking
-    dots.forEach((d, i) => {
-      if (i >= MAX_VISIBLE) d.style.display = 'none';
-    });
+    dots.forEach((d, i) => { if (i >= MAX_VISIBLE) d.style.display = 'none'; });
   }
 
-  // Track active slide via IntersectionObserver, scoped to container
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -70,7 +51,6 @@
   );
   slides.forEach((s) => io.observe(s));
 
-  // Activate first slide on load
   if (slides[0]) {
     slides[0].classList.add('reel-active');
     if (dots[0]) dots[0].classList.add('active');

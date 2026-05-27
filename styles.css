@@ -1221,11 +1221,239 @@ footer .wrap { color: var(--paper-deep); }
 }
 
 /* ============ TIKTOK CONTAINER (Arqalum pattern) ============ */
-/* Desktop: container is transparent passthrough. Mobile: dedicated scroll-snap container. */
 .tiktok-container { position: relative; }
 .nav-dots { display: none; }
 
+/* Reels-mobile hidden on desktop. Desktop flow always shown. */
+.reels-mobile { display: none; }
+
+/* ============ DESIGNED 9:16 REELS (mobile only) ============ */
 @media (max-width: 768px) {
+  /* Swap: hide desktop flow, show reels-mobile */
+  .reels-mobile { display: block; }
+  .desktop-flow { display: none; }
+
+  /* Each reel is one 9:16 designed slide */
+  .reel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 70px 26px 36px;
+    box-sizing: border-box;
+  }
+  .reel-meta {
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .reel-meta::before {
+    content: '';
+    width: 22px; height: 1px; background: currentColor;
+  }
+  .reel h1, .reel h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    font-size: clamp(40px, 12vw, 52px);
+    margin-bottom: 18px;
+  }
+  .reel h1 em, .reel h2 em {
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    font-weight: 300;
+  }
+  .reel p {
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text);
+    max-width: 32ch;
+  }
+  .reel-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 26px;
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    width: fit-content;
+    margin-top: auto;
+  }
+  .reel-cta svg { transition: transform .25s; }
+  .reel-cta:active svg { transform: translateX(3px); }
+  .reel-link {
+    font-family: var(--sans);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 24px;
+  }
+
+  /* IMAGE-LED REEL: full-bleed photo with overlay */
+  .reel-image {
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-end;
+  }
+  .reel-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20,15,8,0.0) 30%, rgba(20,15,8,0.78) 95%);
+    z-index: 0;
+  }
+  .reel-image > * { position: relative; z-index: 1; }
+  .reel-image .reel-meta { color: rgba(255,255,255,0.85); }
+  .reel-image h1, .reel-image h2 { color: #fff; }
+  .reel-image p { color: rgba(255,255,255,0.92); }
+  .reel-image .reel-cta { background: var(--paper); color: var(--ink); }
+
+  /* TEXT REEL on cream paper */
+  .reel-paper { justify-content: flex-start; }
+  .reel-paper.center { justify-content: center; }
+
+  /* STAT/PROMISE REEL: huge serif number */
+  .reel-stat .stat-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    font-weight: 300;
+    font-size: clamp(150px, 48vw, 220px);
+    line-height: 0.88;
+    letter-spacing: -0.06em;
+    color: var(--wood);
+    margin: 20px 0 24px -6px;
+  }
+
+  /* SERVICE CARD REEL: color-tinted, painted icon, big serif title */
+  .reel-service {
+    justify-content: flex-end;
+    padding-bottom: 36px;
+  }
+  .reel-service .svc-icon {
+    width: 110px; height: 110px;
+    margin-bottom: auto;
+  }
+  .reel-service.wood  { background: linear-gradient(170deg, rgba(63,92,58,0.10) 0%, transparent 60%); }
+  .reel-service.fire  { background: linear-gradient(170deg, rgba(160,60,42,0.10) 0%, transparent 60%); }
+  .reel-service.water { background: linear-gradient(170deg, rgba(42,74,110,0.10) 0%, transparent 60%); }
+  .reel-service.earth { background: linear-gradient(170deg, rgba(181,128,64,0.10) 0%, transparent 60%); }
+  .reel-service.metal { background: linear-gradient(170deg, rgba(168,154,130,0.14) 0%, transparent 60%); }
+  .reel-service.wood  h2 em { color: var(--wood); }
+  .reel-service.fire  h2 em { color: var(--fire); }
+  .reel-service.water h2 em { color: var(--water); }
+  .reel-service.earth h2 em { color: var(--earth); }
+  .reel-service.metal h2 em { color: var(--metal-deep); }
+
+  /* QUOTE REEL: pull-quote layout */
+  .reel-quote {
+    justify-content: center;
+    text-align: left;
+    padding: 70px 26px 100px;
+  }
+  .reel-quote .quote-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 80px;
+    line-height: 0.7;
+    color: var(--fire);
+    margin-bottom: -10px;
+  }
+  .reel-quote blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    font-weight: 300;
+    font-size: clamp(26px, 7.5vw, 34px);
+    line-height: 1.18;
+    color: var(--ink);
+    margin-bottom: 28px;
+    letter-spacing: -0.015em;
+  }
+  .reel-quote blockquote em {
+    font-style: normal;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+    color: var(--wood);
+  }
+  .reel-quote .attribution {
+    font-family: var(--sans);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  /* BOOK REEL (final CTA): hero-scale serif */
+  .reel-book {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  .reel-book .reel-meta { justify-content: center; }
+  .reel-book .reel-meta::before { display: none; }
+  .reel-book h2 {
+    font-size: clamp(56px, 16vw, 78px);
+    line-height: 0.92;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .reel-book h2 em { color: var(--wood); display: block; }
+  .reel-book p { text-align: center; max-width: 28ch; margin: 0 auto 36px; }
+
+  /* FOOTER REEL (compact info) */
+  .reel-footer {
+    background: var(--ink);
+    color: var(--paper);
+    justify-content: space-between;
+  }
+  .reel-footer .reel-meta { color: var(--metal); }
+  .reel-footer h2 { color: var(--paper); font-size: clamp(36px, 10vw, 48px); margin-bottom: 30px; }
+  .reel-footer h2 em { color: var(--metal); display: block; }
+  .reel-footer .foot-info { font-size: 14px; line-height: 1.7; color: var(--paper-deep); }
+  .reel-footer .foot-info strong { color: var(--paper); font-weight: 500; display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 14px; margin-bottom: 4px; }
+  .reel-footer .foot-credit { font-size: 11px; color: var(--metal-deep); margin-top: 24px; letter-spacing: 0.05em; }
+
+  /* PROGRESS HINT (subtle down chevron) */
+  .reel-hint {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    color: rgba(31,26,20,0.35);
+    animation: bob 1.8s ease-in-out infinite;
+  }
+  .reel-image .reel-hint { color: rgba(255,255,255,0.6); }
+  @keyframes bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50%      { transform: translate(-50%, 6px); }
+  }
+
+  /* HTML/body for mobile scroll container behavior */
   html, body {
     height: 100%;
     margin: 0;
