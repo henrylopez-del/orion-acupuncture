@@ -1437,6 +1437,287 @@ footer .wrap { color: var(--paper-deep); }
   .reel-footer .foot-info strong { color: var(--paper); font-weight: 500; display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; margin-top: 14px; margin-bottom: 4px; }
   .reel-footer .foot-credit { font-size: 11px; color: var(--metal-deep); margin-top: 24px; letter-spacing: 0.05em; }
 
+  /* DENSE COMPOSITION HELPERS */
+  .reel-eyebrow-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .reel-eyebrow-row .dot-sep { opacity: 0.4; }
+  .reel-eyebrow-row .accent { color: var(--fire); }
+  .reel-image .reel-eyebrow-row { color: rgba(255,255,255,0.85); }
+
+  .reel-sub {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.45;
+    color: var(--text);
+    margin-bottom: 18px;
+    max-width: 34ch;
+  }
+  .reel-image .reel-sub { color: rgba(255,255,255,0.9); }
+
+  .reel-ctas {
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+    margin-top: 14px;
+  }
+  .reel-ctas .reel-cta { margin-top: 0; padding: 14px 22px; font-size: 14px; }
+  .reel-ctas .ghost {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 14px 22px;
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .reel-image .reel-ctas .ghost { color: #fff; border-color: rgba(255,255,255,0.6); }
+
+  /* 5-element compact grid for approach reel */
+  .reel-elements-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 18px 0;
+  }
+  .reel-el {
+    text-align: center;
+    padding: 14px 4px;
+    background: rgba(31,26,20,0.04);
+    border-radius: 14px;
+  }
+  .reel-el svg { width: 30px; height: 30px; margin: 0 auto 6px; display: block; }
+  .reel-el .name {
+    font-family: var(--serif);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .reel-el .pair {
+    font-family: var(--sans);
+    font-size: 8.5px;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-top: 3px;
+    line-height: 1.2;
+  }
+  .reel-el.wood .name { color: var(--wood); }
+  .reel-el.fire .name { color: var(--fire); }
+  .reel-el.earth .name { color: var(--earth); }
+  .reel-el.metal .name { color: var(--metal-deep); }
+  .reel-el.water .name { color: var(--water); }
+
+  /* Stacked service mini-rows for services reel */
+  .reel-svc-list {
+    display: flex; flex-direction: column;
+    border-top: 1px solid rgba(31,26,20,0.18);
+    margin: 14px 0 16px;
+  }
+  .reel-svc-row {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    gap: 14px;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(31,26,20,0.12);
+  }
+  .reel-svc-row .icon { width: 28px; height: 28px; }
+  .reel-svc-row .title {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .reel-svc-row .title .desc {
+    display: block;
+    font-family: var(--sans);
+    font-style: normal;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 400;
+    margin-top: 2px;
+    letter-spacing: 0;
+  }
+  .reel-svc-row .price {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .reel-svc-row.wood .icon path,
+  .reel-svc-row.wood .icon ellipse { stroke: var(--wood); fill: var(--wood); }
+  .reel-svc-row.fire .icon path { fill: var(--fire); }
+  .reel-svc-row.water .icon path { stroke: var(--water); }
+  .reel-svc-row.earth .icon path { fill: var(--earth); }
+  .reel-svc-row.metal .icon path { stroke: var(--metal-deep); fill: var(--metal-deep); }
+
+  /* Pricing pills */
+  .reel-pills {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    margin: 8px 0 18px;
+  }
+  .reel-pills .pill {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    background: rgba(31,26,20,0.06);
+    color: var(--ink);
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  /* Practitioner card with portrait + quote */
+  .reel-practitioner-card {
+    display: flex; flex-direction: column;
+    gap: 14px;
+    background: var(--paper-deep);
+    border-radius: 14px;
+    padding: 16px;
+    margin: 14px 0 16px;
+  }
+  .reel-practitioner-card .row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 14px;
+    align-items: center;
+  }
+  .reel-practitioner-card .avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background-image: url('img/hero-hands.webp');
+    background-size: cover; background-position: center;
+    filter: sepia(0.2) contrast(1.05);
+  }
+  .reel-practitioner-card .name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.1;
+  }
+  .reel-practitioner-card .name .creds {
+    display: block;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .reel-practitioner-card .testimonial {
+    font-family: var(--serif);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.32;
+    color: var(--ink);
+    padding-top: 12px;
+    border-top: 1px solid rgba(31,26,20,0.12);
+  }
+  .reel-practitioner-card .testimonial em { font-style: normal; color: var(--wood); }
+  .reel-practitioner-card .attr {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-top: 8px;
+  }
+
+  /* 3-step strip for first session */
+  .reel-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 14px 0 14px;
+  }
+  .reel-step {
+    background: rgba(31,26,20,0.04);
+    border-radius: 12px;
+    padding: 14px 10px;
+    text-align: center;
+  }
+  .reel-step .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+    font-weight: 300;
+    font-size: 30px;
+    color: var(--wood);
+    line-height: 1;
+  }
+  .reel-step .label {
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    margin: 6px 0 4px;
+    font-weight: 500;
+  }
+  .reel-step .body {
+    font-family: var(--sans);
+    font-size: 11.5px;
+    line-height: 1.35;
+    color: var(--muted);
+  }
+  .reel-image .reel-steps .reel-step {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .reel-image .reel-steps .reel-step .num { color: var(--paper); }
+  .reel-image .reel-steps .reel-step .label { color: var(--paper); }
+  .reel-image .reel-steps .reel-step .body { color: rgba(255,255,255,0.75); }
+
+  /* Bottom info strip (book + footer combined) */
+  .reel-strip {
+    background: var(--ink);
+    color: var(--paper-deep);
+    margin: 18px -26px -36px;
+    padding: 18px 26px 28px;
+    font-family: var(--sans);
+    font-size: 12px;
+    line-height: 1.55;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 18px;
+  }
+  .reel-strip strong {
+    display: block;
+    font-size: 10px;
+    color: var(--metal);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  /* Stamp/badge accent */
+  .reel-stamp {
+    position: absolute;
+    top: 72px;
+    right: 22px;
+    width: 78px;
+    height: 78px;
+    transform: rotate(-8deg);
+    opacity: 0.95;
+    z-index: 2;
+  }
+  .reel-image .reel-stamp { opacity: 0.85; }
+
   /* PROGRESS HINT (subtle down chevron) */
   .reel-hint {
     position: absolute;
