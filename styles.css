@@ -1471,6 +1471,37 @@ footer .wrap { color: var(--paper-deep); }
     max-width: 36ch;
   }
   .reel-body:last-of-type { margin-bottom: 18px; }
+
+  /* 5 elements row — clean, no boxes */
+  .reel-elements-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    margin: 6px 0 18px;
+  }
+  .reel-elements-row .el {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .reel-elements-row .el svg {
+    width: 36px;
+    height: 36px;
+  }
+  .reel-elements-row .el span {
+    font-family: var(--serif);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .reel-elements-row .el.wood span { color: var(--wood); }
+  .reel-elements-row .el.fire span { color: var(--fire); }
+  .reel-elements-row .el.earth span { color: var(--earth); }
+  .reel-elements-row .el.metal span { color: var(--metal-deep); }
+  .reel-elements-row .el.water span { color: var(--water); }
   .reel-image .reel-sub { color: rgba(255,255,255,0.9); }
 
   .reel-ctas {
