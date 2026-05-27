@@ -794,25 +794,14 @@ nav.top .links a.muted { color: var(--muted); }
 .portrait-block { position: relative; height: 580px; }
 .portrait {
   width: 100%; height: 100%;
-  background: linear-gradient(160deg, #C9B89A 0%, #8A7560 60%, #4A3F33 100%);
-  background-image:
-    radial-gradient(ellipse at 50% 30%, rgba(232,213,180,0.7), transparent 55%),
-    radial-gradient(ellipse at 40% 70%, rgba(31,26,20,0.3), transparent 60%);
+  background-image: url('img/gigi-portrait.webp');
+  background-size: cover;
+  background-position: center top;
   border-radius: 2px;
   transform: rotate(-1.5deg);
   position: relative;
   overflow: hidden;
   box-shadow: 0 40px 70px -25px rgba(31,26,20,0.35);
-}
-.portrait::after {
-  content: "Practitioner portrait · replace with photo";
-  position: absolute;
-  bottom: 16px; left: 18px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: rgba(242,235,220,0.65);
-  font-family: var(--sans);
 }
 .portrait-stamp {
   position: absolute;
